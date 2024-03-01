@@ -100,7 +100,7 @@ class ProjectController extends Controller
     {
         $form_data = $request->all();
 
-        $exists = Project::where('title', 'LIKE', $form_data['title'])->get();
+        $exists = Project::where('title', '=', $form_data['title'])->where('id', '!=', $project->id)->get();
 
         if(count($exists) > 0){
             $error_message = 'This title is already used in another project!';
@@ -118,7 +118,6 @@ class ProjectController extends Controller
 
         $slug = Str::slug($form_data['title'], '-');
         $form_data['slug'] = $slug;
-        $project = Project::find($slug);
 
         $project->update($form_data);
 

@@ -35,7 +35,7 @@
                         <td>{{ Str::limit($project->description, 20, '...') }}</td>
                         <td>{{ $project->authors }}</td>
                         <td>{{ $project->completed ? 'Yes' : 'No' }}</td>
-                        <td>{{ $project->type != null ? $project->type->name : 'No type' }}</td>
+                        <td>{{ $project->type_id != null ? $project->type->name : 'No type' }}</td>
                         <td>
                             <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-sm btn-primary btn-square">
                                 <i class="bi bi-eye-fill"></i>
