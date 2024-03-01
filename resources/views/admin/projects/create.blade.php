@@ -32,6 +32,15 @@
                     @enderror
                 </div>
                 <div class="form-group my-2">
+                    <label for="type_id">Type of project</label>
+                    <select class="form-select" name="type_id" id="type_id">
+                        <option value="">Select an option</option>
+                        @foreach ($types as $type)
+                        <option value="{{ $type->id }}" @selected($type->id == old('type_id'))>{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group my-2">
                     <label for="preview_image">Preview image</label>
                     <input class="form-control @error('preview_image') is-invalid @enderror" type="file" name="preview_image" id="preview_image" value="{{ old('preview_image') }}">
                     @error('preview_image')

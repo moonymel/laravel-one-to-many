@@ -10,6 +10,8 @@ use Faker\Generator as Faker;
 use Faker\Provider\en_US\Person;
 use Illuminate\Support\Str;
 
+use App\Models\Type;
+
 class ProjectSeeder extends Seeder
 {
     /**
